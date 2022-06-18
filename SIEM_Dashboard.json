@@ -1,16 +1,72 @@
 [
   {
+    "_id": "FWlS03kBUXvNBM1czzC6",
+    "_type": "doc",
+    "_source": {
+      "type": "dashboard",
+      "updated_at": "2022-04-14T20:13:54.668Z",
+      "creator": "mark",
+      "dashboard": {
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true,\"default_field\":\"message\"}}}]}"
+        },
+        "description": "A basic dashboard to view parsed events by parser name, vendor and product.",
+        "timeRestore": true,
+        "refreshInterval": {
+          "pause": false,
+          "display": "Off",
+          "value": 0
+        },
+        "panelsJSON": "[{\"col\":1.0,\"id\":\"Qz6zKYABPFrD6GVvVOMD\",\"panelIndex\":4.0,\"row\":1.0,\"size_x\":3.0,\"size_y\":2.0,\"type\":\"visualization\"},{\"col\":6.0,\"id\":\"RD6zKYABPFrD6GVv3eOB\",\"panelIndex\":5.0,\"row\":1.0,\"size_x\":3.0,\"size_y\":2.0,\"type\":\"visualization\"},{\"col\":1.0,\"id\":\"5jUmG3MBqmJKjpwl6DUw\",\"panelIndex\":3.0,\"row\":3.0,\"size_x\":5.0,\"size_y\":6.0,\"type\":\"visualization\"},{\"col\":6.0,\"id\":\"FGlN03kBUXvNBM1ckDDB\",\"panelIndex\":2.0,\"row\":3.0,\"size_x\":5.0,\"size_y\":6.0,\"type\":\"visualization\"}]",
+        "timeFrom": "now-24h",
+        "version": 1,
+        "hits": 0,
+        "uiStateJSON": "{}",
+        "timeTo": "now",
+        "title": "SIEM Dashboard",
+        "optionsJSON": "{\"darkTheme\":true}",
+        "invisible": false
+      }
+    }
+  },
+  {
+    "_id": "6DUnG3MBqmJKjpwlxTV2",
+    "_type": "doc",
+    "_source": {
+      "type": "search",
+      "updated_at": "2022-03-19T00:51:40.191Z",
+      "creator": "mark",
+      "search": {
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":true,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"!_exists_:\\\"exa_parser_name\\\"\",\"analyze_wildcard\":true,\"default_field\":\"message\"}}}"
+        },
+        "description": "",
+        "timeRestore": true,
+        "timeFrom": "now-1h",
+        "version": 1,
+        "hits": 0,
+        "columns": [],
+        "timeTo": "now",
+        "title": "Unparsed Events",
+        "sort": [
+          "indexTime",
+          "desc"
+        ]
+      }
+    }
+  },
+  {
     "_id": "FGlN03kBUXvNBM1ckDDB",
     "_type": "doc",
     "_source": {
       "type": "visualization",
-      "updated_at": "2021-06-03T19:17:24.994Z",
-      "creator": "admin",
+      "updated_at": "2022-03-19T17:06:57.557Z",
+      "creator": "mark",
       "visualization": {
         "visState": "{\"title\":\"Vendors and Products\",\"type\":\"table\",\"params\":{\"perPage\":100,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false,\"showTotal\":true,\"sort\":[],\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"customLabel\":\"Vendor\",\"field\":\"Vendor.keyword\",\"size\":50,\"shard_size\":5000,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"enabled\":false,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"Product.keyword\",\"size\":10,\"shard_size\":5000,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":true}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"customLabel\":\"Product\",\"field\":\"Product.keyword\",\"size\":20,\"shard_size\":5000,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
         "kibanaSavedObjectMeta": {
           "searchSourceJSON": "{\"index\":\"index-pattern:exabeam-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"default_field\":\"message\",\"query\":\"_exists_:\\\"exa_parser_name\\\"\"}},\"filter\":[]}",
-          "searchQuery": "{\"clusterWithIndices\":[{\"clusterName\":\"local\"}],\"query\":\"_exists_:\\\"exa_parser_name\\\"\",\"docValues\":[\"indexTime\"],\"source\":true,\"queryAnalyzeWildcard\":true,\"queryDefaultField\":\"message\",\"storedFields\":[\"*\"],\"highlight\":true,\"size\":0,\"rangeQuery\":{\"field\":\"indexTime\",\"lte\":\"1622747806154\",\"gte\":\"1622746906154\"}}"
+          "searchQuery": "{\"clusterWithIndices\":[{\"clusterName\":\"local\",\"indices\":[\"exabeam-2021.06.03\"]}],\"query\":\"_exists_:\\\"exa_parser_name\\\"\",\"docValues\":[\"indexTime\"],\"source\":true,\"queryAnalyzeWildcard\":true,\"queryDefaultField\":\"message\",\"storedFields\":[\"*\"],\"highlight\":true,\"size\":0,\"rangeQuery\":{\"field\":\"indexTime\",\"lte\":\"1622747806154\",\"gte\":\"1622746906154\"}}"
         },
         "description": "",
         "timeFrom": "now-1h",
@@ -28,8 +84,8 @@
     "_type": "doc",
     "_source": {
       "type": "visualization",
-      "updated_at": "2021-04-25T01:25:17.166Z",
-      "creator": "admin",
+      "updated_at": "2022-03-19T17:06:57.583Z",
+      "creator": "mark",
       "visualization": {
         "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":100,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":[],\"showTotal\":true,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"customLabel\":\"Parser Name\",\"field\":\"exa_parser_name.keyword\",\"size\":100,\"shard_size\":5000,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"enabled\":false,\"type\":\"date_histogram\",\"schema\":\"split\",\"params\":{\"field\":\"indexTime\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"row\":true}}],\"listeners\":{}}",
         "kibanaSavedObjectMeta": {
@@ -46,32 +102,48 @@
     }
   },
   {
-    "_id": "FWlS03kBUXvNBM1czzC6",
+    "_id": "Qz6zKYABPFrD6GVvVOMD",
     "_type": "doc",
     "_source": {
-      "type": "dashboard",
-      "updated_at": "2021-07-22T21:26:55.472Z",
-      "creator": "admin",
-      "dashboard": {
+      "type": "visualization",
+      "updated_at": "2022-04-14T20:10:59.969Z",
+      "creator": "mark",
+      "visualization": {
+        "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"_exists_:\\\"exa_parser_name\\\"\",\"analyze_wildcard\":true,\"default_field\":\"message\"}}}]}"
+          "searchSourceJSON": "{\"index\":\"index-pattern:exabeam-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"default_field\":\"message\",\"query\":\"_exists_:\\\"exa_parser_name\\\"\"}},\"filter\":[]}",
+          "searchQuery": "{\"clusterWithIndices\":[{\"clusterName\":\"local\",\"indices\":[\"exabeam-2022.04.14\"]}],\"query\":\"_exists_:\\\"exa_parser_name\\\"\",\"docValues\":[\"indexTime\"],\"source\":true,\"queryAnalyzeWildcard\":true,\"queryDefaultField\":\"message\",\"storedFields\":[\"*\"],\"highlight\":true,\"size\":0,\"rangeQuery\":{\"field\":\"indexTime\",\"lte\":\"1649967049827\",\"gte\":\"1649963449827\"}}"
         },
-        "description": "A basic dashboard to view parsed events by parser name, vendor and product.",
-        "timeRestore": true,
-        "refreshInterval": {
-          "pause": false,
-          "display": "Off",
-          "value": 0
-        },
-        "panelsJSON": "[{\"col\":6.0,\"id\":\"FGlN03kBUXvNBM1ckDDB\",\"panelIndex\":2.0,\"row\":1.0,\"size_x\":5.0,\"size_y\":6.0,\"type\":\"visualization\"},{\"col\":1.0,\"id\":\"5jUmG3MBqmJKjpwl6DUw\",\"panelIndex\":3.0,\"row\":1.0,\"size_x\":5.0,\"size_y\":6.0,\"type\":\"visualization\"}]",
         "timeFrom": "now-1h",
-        "version": 1,
-        "hits": 0,
-        "uiStateJSON": "{}",
         "timeTo": "now",
-        "title": "SIEM Dashboard",
-        "optionsJSON": "{\"darkTheme\":true}",
-        "invisible": false
+        "version": 1,
+        "caption": "",
+        "uiStateJSON": "{\"vis\":{\"colors\":null,\"palette\":0}}",
+        "title": "Parsed Events",
+        "thumbnail": "data:,"
+      }
+    }
+  },
+  {
+    "_id": "RD6zKYABPFrD6GVv3eOB",
+    "_type": "doc",
+    "_source": {
+      "type": "visualization",
+      "updated_at": "2022-04-14T20:13:36.759Z",
+      "creator": "mark",
+      "visualization": {
+        "visState": "{\"title\":\"Unparsed Events\",\"type\":\"metric\",\"params\":{\"fontSize\":60,\"handleNoResults\":true},\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"}],\"listeners\":{}}",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"index-pattern:exabeam-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"default_field\":\"message\",\"query\":\"!_exists_:\\\"exa_parser_name\\\"\"}},\"filter\":[]}",
+          "searchQuery": "{\"clusterWithIndices\":[{\"clusterName\":\"local\",\"indices\":[\"exabeam-2022.04.14\",\"exabeam-2022.04.13\"]}],\"query\":\"!_exists_:\\\"exa_parser_name\\\"\",\"docValues\":[\"indexTime\"],\"source\":true,\"queryAnalyzeWildcard\":true,\"queryDefaultField\":\"message\",\"storedFields\":[\"*\"],\"highlight\":true,\"size\":0,\"rangeQuery\":{\"field\":\"indexTime\",\"lte\":\"1649967211614\",\"gte\":\"1649880811614\"}}"
+        },
+        "description": "",
+        "timeFrom": "now-24h",
+        "timeTo": "now",
+        "version": 1,
+        "caption": "",
+        "uiStateJSON": "{\"vis\":{\"colors\":null,\"palette\":0}}",
+        "title": "Unparsed Events"
       }
     }
   }
