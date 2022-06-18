@@ -1,19 +1,18 @@
 [
   {
-    "_id": "6UMOMnsBffhu_JvxMeT9",
+    "_id": "6DUnG3MBqmJKjpwlxTV2",
     "_type": "doc",
     "_source": {
       "type": "search",
-      "updated_at": "2021-08-13T22:55:29.452Z",
-      "creator": "admin",
+      "updated_at": "2022-03-19T00:51:40.191Z",
+      "creator": "mark",
       "search": {
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":true,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"NOT _exists_:\\\"exa_parser_name\\\"\"}}}",
-          "searchQuery": "{\"clusterWithIndices\":[{\"clusterName\":\"local\"}],\"query\":\"NOT _exists_:\\\"exa_parser_name\\\"\",\"docValues\":[\"indexTime\"],\"source\":true,\"queryAnalyzeWildcard\":true,\"queryDefaultField\":\"message\",\"storedFields\":[\"*\"],\"highlight\":true,\"size\":0,\"sortBy\":[{\"field\":\"indexTime\",\"order\":\"desc\",\"unmappedType\":\"date\"}]}"
+          "searchSourceJSON": "{\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":true,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"!_exists_:\\\"exa_parser_name\\\"\",\"analyze_wildcard\":true,\"default_field\":\"message\"}}}"
         },
         "description": "Events where there is no exa_parser_name field.",
         "timeRestore": true,
-        "timeFrom": "now-24h",
+        "timeFrom": "now-1h",
         "version": 1,
         "hits": 0,
         "columns": [],
