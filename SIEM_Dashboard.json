@@ -18,7 +18,7 @@
           "value": 0
         },
         "panelsJSON": "[{\"col\":1.0,\"id\":\"Qz6zKYABPFrD6GVvVOMD\",\"panelIndex\":4.0,\"row\":1.0,\"size_x\":3.0,\"size_y\":2.0,\"type\":\"visualization\"},{\"col\":6.0,\"id\":\"RD6zKYABPFrD6GVv3eOB\",\"panelIndex\":5.0,\"row\":1.0,\"size_x\":3.0,\"size_y\":2.0,\"type\":\"visualization\"},{\"col\":1.0,\"id\":\"5jUmG3MBqmJKjpwl6DUw\",\"panelIndex\":3.0,\"row\":3.0,\"size_x\":5.0,\"size_y\":6.0,\"type\":\"visualization\"},{\"col\":6.0,\"id\":\"FGlN03kBUXvNBM1ckDDB\",\"panelIndex\":2.0,\"row\":3.0,\"size_x\":5.0,\"size_y\":6.0,\"type\":\"visualization\"}]",
-        "timeFrom": "now-24h",
+        "timeFrom": "now-1h",
         "version": 1,
         "hits": 0,
         "uiStateJSON": "{}",
@@ -40,7 +40,7 @@
         "kibanaSavedObjectMeta": {
           "searchSourceJSON": "{\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":true,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"!_exists_:\\\"exa_parser_name\\\"\",\"analyze_wildcard\":true,\"default_field\":\"message\"}}}"
         },
-        "description": "",
+        "description": "Events where there is no exa_parser_name field",
         "timeRestore": true,
         "timeFrom": "now-1h",
         "version": 1,
@@ -138,7 +138,7 @@
           "searchQuery": "{\"clusterWithIndices\":[{\"clusterName\":\"local\",\"indices\":[\"exabeam-2022.04.14\",\"exabeam-2022.04.13\"]}],\"query\":\"!_exists_:\\\"exa_parser_name\\\"\",\"docValues\":[\"indexTime\"],\"source\":true,\"queryAnalyzeWildcard\":true,\"queryDefaultField\":\"message\",\"storedFields\":[\"*\"],\"highlight\":true,\"size\":0,\"rangeQuery\":{\"field\":\"indexTime\",\"lte\":\"1649967211614\",\"gte\":\"1649880811614\"}}"
         },
         "description": "",
-        "timeFrom": "now-24h",
+        "timeFrom": "now-1h",
         "timeTo": "now",
         "version": 1,
         "caption": "",
